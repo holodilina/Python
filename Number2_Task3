@@ -1,0 +1,24 @@
+# В большой текстовой строке подсчитать количество встречаемых слов
+# и вернуть 10 самых частых. Не учитывать знаки препинания и регистр символов.
+# За основу возьмите любую статью из википедии или из документации к языку.
+
+# текст разбить по пробелу, искл знаки препинания
+
+path = 'eng_t.txt'
+text = ''
+with open(path, 'r') as f:
+    for line in f.readlines():
+        text = line + text
+text = "".join([i for i in text.lower() if i.isalpha() or i == " "])
+print(text)
+myDict = {}
+text = text.split(" ")
+for i in text:
+    myDict[i] = myDict.get(i, 0) + 1
+for key, item in myDict.items():
+    result = sorted(myDict.items(), key = lambda x: (-x[1], x[0]))
+count = 0
+for i, j in result:
+    count += 1
+    print(f' слово {i} встретилось {j} раз')
+    if count == 10 : break
