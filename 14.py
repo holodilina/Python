@@ -1,3 +1,7 @@
+# Python Task14: Возьмите 1-3 задания из тех, что были на прошлых семинарах или в домашних заданиях. Напишите к ним тесты. 2-5 тестов на задание в трёх вариантах: doctest, unittest, pytest.
+
+
+
 import unittest
 import doctest
 import pytest
